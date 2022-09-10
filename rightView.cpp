@@ -52,3 +52,37 @@ vector<int> printRightView(BinaryTreeNode<int>* root)
     }
     return ans;
 }
+
+
+
+//right side view
+
+
+
+
+
+
+
+
+
+
+
+void f(TreeNode* root, vector<int>&ans, int level){
+        if(root==NULL) return;
+        
+        if(ans.size()==level){
+            ans.push_back(root->val);
+        }
+        if(root->right){
+            f(root->right, ans, level+1);
+        }
+        if(root->left){
+            f(root->left, ans, level+1);
+        }
+    }
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int>ans;
+        int level=0;
+        f(root,ans, level);
+        return ans;
+    }
