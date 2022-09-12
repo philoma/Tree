@@ -32,7 +32,7 @@ void changeTree(BinaryTreeNode<int> *root)
         root->data = child;
     else
     {
-        if (root->left)
+        if (root->left) 
             root->left->data = root->data;
         if (root->right)
             root->right->data = root->data;
