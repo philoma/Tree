@@ -1,4 +1,4 @@
-//lcs- least common ancestor
+//lca- least common ancestor
 
 int lowestCommonAncestor(TreeNode<int> *root, int x, int y)
 {
