@@ -1,3 +1,40 @@
+class Solution {
+public:
+    TreeNode* bstFromPreorder(vector<int>& v) {
+        
+        TreeNode*root=new TreeNode(v[0]);
+        TreeNode*node=root;
+        for(int i=1;i<v.size();i++){
+            TreeNode*p=new TreeNode(v[i]);
+            node=root;
+            while(node){
+                if(node->val>p->val){
+                    if(node->left==NULL){
+                        node->left=p;
+                    node=root;
+                    break;}
+                    node=node->left;
+                    
+                }else{
+                    if(node->right==NULL){
+                        node->right=p;
+                    node=root;
+                    break;}
+                    node=node->right;
+                }
+            }
+        }
+        return root;
+    }
+};
+
+
+
+
+
+
+
+
 
 
 class Solution {
