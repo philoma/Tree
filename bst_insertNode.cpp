@@ -29,14 +29,19 @@ TreeNode<int>* insertionInBST(TreeNode<int>* root, int val)
         if(val>node->val){
             if(node->right==NULL) {
                 node->right=new TreeNode<int>(val);
-                break;}else
-            {node=node->right;}
+                break;
+            }
+            else{
+                node=node->right;
+                }
         }else{
             if(node->left==NULL){
                 node->left=new TreeNode<int>(val);
                 break;
-            }else
-            {node=node->left;}
+                                }
+            else{
+                node=node->left;
+                }
         }
     }
     return root;
